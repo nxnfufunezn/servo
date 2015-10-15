@@ -1371,10 +1371,12 @@ impl Node {
         Node::new_(type_id, Some(doc.clone()))
     }
 
+    #[allow(unrooted_must_root)]
     pub fn new_without_doc(type_id: NodeTypeId) -> Node {
         Node::new_(type_id, None)
     }
 
+    #[allow(unrooted_must_root)]
     fn new_(type_id: NodeTypeId, doc: Option<&Document>) -> Node {
         Node {
             eventtarget: EventTarget::new_inherited(),
